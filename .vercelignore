@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Git
+.git/
+.gitignore
+
+# Vercel
+.vercel/
+
+# Development files
+*.log
+.env*
+
+# OS files
+.DS_Store
+Thumbs.db
