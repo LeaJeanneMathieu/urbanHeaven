@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 p-0 font-primary;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-white m-0;
+  }
+
+  h1 {
+    @apply font-extralight text-[35px] drop-shadow-md;
+  }
+
+  h2 {
+    @apply font-thin text-[15px];
+  }
+
+  h3 {
+    @apply font-thin text-[40px] tracking-wider mb-lg;
+  }
+
+  h4 {
+    @apply font-secondary text-base font-light tracking-wider;
+  }
+
+  p {
+    @apply font-secondary text-white text-lg leading-relaxed mb-xl font-light;
+  }
+} 

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UrbanHeaven - Votre site web">
+    <title>UrbanHeaven</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="relative w-full h-screen overflow-hidden">
+        <div class="absolute top-0 left-0 h-full w-1/2 bg-cover bg-center parallax-bg"
+            style="background-image: url('Assets/image 36.png');"></div>
+        <div class="absolute top-0 right-0 h-full w-1/2 bg-cover bg-center parallax-bg"
+            style="background-image: url('Assets/image1.png');"></div>
+
+        <nav class="relative z-10 ml-[5%] mt-[15px]">
+            <ul class="font-secondary font-thin flex justify-between text-xl w-[40%] list-none">
+                <li><a href="#"
+                        class="text-white no-underline relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">HOME</a>
+                </li>
+                <li><a href="#"
+                        class="text-white no-underline relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">PRODUCTS</a>
+                </li>
+                <li><a href="#"
+                        class="text-white no-underline relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">NEWS</a>
+                </li>
+                <li><a href="#"
+                        class="text-white no-underline relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">CART</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="fixed top-md right-md z-[1000] cursor-pointer group">
+            <div class="w-10 h-5 flex flex-col justify-between">
+                <span
+                    class="block w-full h-[3px] bg-white rounded-[3px] transition-all duration-300 group-hover:translate-y-[8px] group-hover:rotate-45"></span>
+                <span
+                    class="block w-full h-[3px] bg-white rounded-[3px] transition-all duration-300 group-hover:opacity-0"></span>
+                <span
+                    class="block w-full h-[3px] bg-white rounded-[3px] transition-all duration-300 group-hover:-translate-y-[8px] group-hover:-rotate-45"></span>
+            </div>
+            <div
+                class="absolute top-full right-0 bg-black/90 w-[200px] p-md rounded-[5px] mt-sm opacity-0 invisible -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                <ul class="list-none p-0 m-0 w-full">
+                    <li class="my-[15px]"><a href="#"
+                            class="text-white no-underline font-secondary text-base relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full hover:translate-x-1">HOME</a>
+                    </li>
+                    <li class="my-[15px]"><a href="#"
+                            class="text-white no-underline font-secondary text-base relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full hover:translate-x-1">PRODUCTS</a>
+                    </li>
+                    <li class="my-[15px]"><a href="#"
+                            class="text-white no-underline font-secondary text-base relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full hover:translate-x-1">NEWS</a>
+                    </li>
+                    <li class="my-[15px]"><a href="#"
+                            class="text-white no-underline font-secondary text-base relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full hover:translate-x-1">CART</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="absolute left-[5%] top-1/2 -translate-y-1/2 z-[2] w-full max-w-[600px]">
+            <img src="Assets/logo1sansfond 1.png" alt="logo" id="logo" class="max-w-[600px] w-full h-auto block">
+        </div>
+
+        <div
+            class="absolute left-1/2 bottom-[30px] -translate-x-1/2 z-[2] w-full max-w-[800px] text-center scroll-reveal">
+            <h1 class="font-display text-white font-extralight text-[35px] drop-shadow-md mb-4">TRANSFORM PLACES <br>
+                INTO BEAUTIFUL HOMES</h1>
+            <h2 class="font-display text-white font-thin text-[15px]">PLANTS MODERN</h2>
+        </div>
+    </header>
+
+    <main>
+        <section class="w-full h-screen flex relative overflow-hidden">
+            <div class="w-1/2 h-full overflow-hidden relative">
+                <img src="/Assets/image 2.png" alt="Plant"
+                    class="w-full h-[140%] object-cover section-img absolute top-0 left-0">
+            </div>
+            <div class="relative h-full w-1/2 flex items-center px-[5%] bg-gradient-to-b from-gray-dark to-gray-medium">
+                <div class="max-w-[500px] w-full section-content">
+                    <h3 class="font-display text-white font-thin text-[50px] mb-lg tracking-wider">MINIMALIST STYLE</h3>
+                    <p class="font-secondary text-white text-xl leading-relaxed mb-xl font-light w-[80%]">Lorem ipsum
+                        dolor sit amet consectetur. Lectus pellentesque convallis nunc est. Amet nisl aenean ornare
+                        dapibus nisi turpis.</p>
+                    <button
+                        class="font-secondary text-[20px] font-thin bg-gray-light/90 px-[45px] py-md text-white border-none shadow-md tracking-wider transition-all duration-300 hover:bg-white hover:text-gray-dark hover:scale-105 hover:shadow-lg">SEE
+                        MORE</button>
+                </div>
+            </div>
+        </section>
+        <section class="w-full h-screen flex relative overflow-hidden">
+            <div class="w-1/2 h-full flex items-center px-[5%] bg-gradient-to-b from-[#d1d5d8] to-[#6e7072]">
+                <div class="max-w-full w-full section-content">
+                    <h3 class="font-display text-black font-thin text-[50px] mb-[30px] tracking-wider">INTERIOR PLANTS
+                    </h3>
+                    <p class="font-secondary text-white text-xl leading-relaxed mb-[40px] font-light w-[80%]">Lorem
+                        ipsum dolor sit amet consectetur. In ultrices erat amet neque ac amet sed sed. Egestas lacus
+                        feugiat tortor ut risus mi viverra suscipit massa.</p>
+                    <button
+                        class="font-secondary text-[20px] font-thin bg-[#444] px-[45px] py-[20px] text-white border-none shadow-md tracking-wider transition-all duration-300 hover:bg-white hover:text-gray-dark hover:scale-105 hover:shadow-lg">SHOP</button>
+                </div>
+            </div>
+            <div class="w-1/2 h-full overflow-hidden relative">
+                <img src="/Assets/image3.png" alt="Plant"
+                    class="w-full h-[150%] object-cover section-img absolute top-0 left-0">
+            </div>
+        </section>
+        <section>
+            <div style="display: flex; height: 70vh; overflow: hidden;">
+                <img src="/Assets/image6.png" alt="Plant 4" style="width: 33.33%; height: 100%; object-fit: cover;">
+                <img src="/Assets/image7.png" alt="Plant 5" style="width: 33.33%; height: 100%; object-fit: cover;">
+                <img src="/Assets/image8.png" alt="Plant 6" style="width: 33.33%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="bg-gradient-to-b from-green-light to-green-dark flex items-center scroll-reveal"
+                style="height: 30vh;">
+                <p
+                    class="font-secondary text-white text-[20px] leading-[2.2] text-left font-light max-w-[800px] ml-[80px]">
+                    UrbanHaven, c'est l'histoire d'une passion pour les plantes et d'un amour pour les intérieurs
+                    urbains. Créé en 2022, nous sommes là pour embellir vos espaces.</p>
+            </div>
+        </section>
+        <section class="w-full h-[80vh] flex relative">
+            <div class="w-1/2 h-full bg-cover bg-center" style="background-image: url('/Assets/image9.png');"></div>
+            <div class="w-1/2 h-full flex items-center px-[5%] bg-gradient-to-b from-[#444] to-[#aaa] scroll-reveal">
+                <div class="max-w-[500px] w-full">
+                    <p class="font-secondary text-white text-[24px] leading-[1.6] mb-[40px] font-light text-left">
+                        Recevez des astuces pour transformer votre intérieur en havre de paix</p>
+                    <input type="email" placeholder="Votre email"
+                        class="font-secondary text-[20px] font-light bg-[#444] py-[10px] px-[20px] text-left text-white border-2 border-white rounded-full tracking-wider w-full focus:outline-none focus:border-white/50">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-radial from-gray-dark to-[#232323] py-[15px] text-white">
+        <div class="max-w-[1200px] mx-auto flex justify-between px-xl gap-xl">
+            <div class="flex flex-col justify-center gap-xs">
+                <div>
+                    <h4 class="font-secondary text-base font-light text-white m-0 tracking-wider">À propos</h4>
+                </div>
+                <div>
+                    <h4 class="font-secondary text-base font-light text-white m-0 tracking-wider">Blog</h4>
+                </div>
+                <div>
+                    <h4 class="font-secondary text-base font-light text-white m-0 tracking-wider">Contact</h4>
+                </div>
+                <div>
+                    <h4 class="font-secondary text-base font-light text-white m-0 tracking-wider">Polique de
+                        confidentalité</h4>
+                </div>
+            </div>
+            <div class="flex flex-col justify-center gap-[15px] pt-[2px]">
+                <a href="#"
+                    class="font-secondary text-white no-underline text-base font-light text-center py-[2px] transition-all">Instagram</a>
+                <a href="#"
+                    class="font-secondary text-white no-underline text-base font-light text-center py-[2px] transition-all">Pinterest</a>
+                <a href="#"
+                    class="font-secondary text-white no-underline text-base font-light text-center py-[2px] transition-all">TikTok</a>
+            </div>
+            <div
+                class="flex flex-col justify-center items-center text-center pl-lg border-l border-white/20 min-w-[320px]">
+                <img src="Assets/logo1sansfond 1.png" alt="UrbanHaven logo" class="w-[240px] h-auto mb-xs">
+                <p class="font-display text-base font-light text-white italic m-0 tracking-[0.5px]">Plantes heureuses,
+                    esprit heureux.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
