@@ -1552,3 +1552,377 @@ p {
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
 } 
+
+/* ===== STYLES RESPONSIVES POUR MOBILE ===== */
+
+/* Media queries pour tablettes (768px et moins) */
+@media (max-width: 768px) {
+  /* Header responsive */
+  header {
+    height: 100vh;
+  }
+  
+  /* Navigation mobile */
+  nav ul {
+    width: 100% !important;
+    justify-content: space-around !important;
+    padding: 0 20px;
+  }
+  
+  nav ul li a {
+    font-size: 16px !important;
+  }
+  
+  /* Logo responsive */
+  #logo {
+    max-width: 400px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-50%) !important;
+  }
+  
+  /* Titres responsives */
+  h1 {
+    font-size: 28px !important;
+    padding: 0 20px;
+  }
+  
+  h2 {
+    font-size: 14px !important;
+  }
+  
+  /* Sections responsives */
+  main section {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 100vh;
+  }
+  
+  main section > div {
+    width: 100% !important;
+    height: 50vh !important;
+  }
+  
+  /* Contenu des sections */
+  .section-content {
+    padding: 40px 20px !important;
+    text-align: center;
+  }
+  
+  .section-content h3 {
+    font-size: 32px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .section-content p {
+    font-size: 18px !important;
+    width: 100% !important;
+    margin-bottom: 30px !important;
+  }
+  
+  .section-content button {
+    font-size: 18px !important;
+    padding: 15px 30px !important;
+  }
+  
+  /* Section des 3 images */
+  main section:nth-child(3) > div:first-child {
+    height: 50vh !important;
+  }
+  
+  main section:nth-child(3) > div:first-child img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  /* Section newsletter */
+  main section:nth-child(4) {
+    height: auto !important;
+    min-height: 80vh;
+  }
+  
+  main section:nth-child(4) > div:first-child {
+    height: 40vh !important;
+  }
+  
+  main section:nth-child(4) > div:last-child {
+    height: 40vh !important;
+    padding: 40px 20px;
+  }
+  
+  main section:nth-child(4) input {
+    font-size: 18px !important;
+    padding: 15px 20px !important;
+  }
+  
+  /* Footer responsive */
+  footer > div {
+    flex-direction: column !important;
+    gap: 30px !important;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  footer .min-w-\[320px\] {
+    min-width: auto !important;
+    border-left: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 30px;
+  }
+  
+  footer img {
+    width: 200px !important;
+  }
+}
+
+/* Media queries pour mobile (480px et moins) */
+@media (max-width: 480px) {
+  /* Header très mobile */
+  header {
+    height: 100vh;
+  }
+  
+  /* Navigation très mobile */
+  nav ul {
+    flex-direction: column !important;
+    gap: 15px !important;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  nav ul li a {
+    font-size: 18px !important;
+  }
+  
+  /* Logo très mobile */
+  #logo {
+    max-width: 300px !important;
+    top: 40% !important;
+  }
+  
+  /* Titres très mobiles */
+  h1 {
+    font-size: 24px !important;
+    padding: 0 15px;
+    line-height: 1.3;
+  }
+  
+  h2 {
+    font-size: 13px !important;
+  }
+  
+  /* Sections très mobiles */
+  main section > div {
+    height: 60vh !important;
+  }
+  
+  /* Contenu des sections très mobile */
+  .section-content {
+    padding: 30px 15px !important;
+  }
+  
+  .section-content h3 {
+    font-size: 28px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .section-content p {
+    font-size: 16px !important;
+    margin-bottom: 25px !important;
+    line-height: 1.5;
+  }
+  
+  .section-content button {
+    font-size: 16px !important;
+    padding: 12px 25px !important;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  /* Section des 3 images très mobile */
+  main section:nth-child(3) > div:first-child {
+    height: 60vh !important;
+  }
+  
+  /* Section newsletter très mobile */
+  main section:nth-child(4) {
+    min-height: 100vh;
+  }
+  
+  main section:nth-child(4) > div:first-child {
+    height: 50vh !important;
+  }
+  
+  main section:nth-child(4) > div:last-child {
+    height: 50vh !important;
+    padding: 30px 15px;
+  }
+  
+  main section:nth-child(4) input {
+    font-size: 16px !important;
+    padding: 12px 15px !important;
+  }
+  
+  /* Footer très mobile */
+  footer > div {
+    gap: 25px !important;
+    padding: 30px 15px;
+  }
+  
+  footer h4 {
+    font-size: 14px !important;
+  }
+  
+  footer img {
+    width: 180px !important;
+  }
+  
+  footer p {
+    font-size: 14px !important;
+  }
+}
+
+/* Media queries pour très petits écrans (320px et moins) */
+@media (max-width: 320px) {
+  /* Ajustements pour très petits écrans */
+  .section-content h3 {
+    font-size: 24px !important;
+  }
+  
+  .section-content p {
+    font-size: 15px !important;
+  }
+  
+  .section-content button {
+    font-size: 15px !important;
+    padding: 10px 20px !important;
+  }
+  
+  h1 {
+    font-size: 22px !important;
+  }
+  
+  h2 {
+    font-size: 12px !important;
+  }
+  
+  footer img {
+    width: 160px !important;
+  }
+}
+
+/* Amélioration de la lisibilité sur mobile */
+@media (max-width: 768px) {
+  /* Meilleur contraste et lisibilité */
+  .text-white {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Boutons plus accessibles sur mobile */
+  button {
+    min-height: 44px !important; /* Taille minimale recommandée pour le touch */
+  }
+  
+  /* Input plus accessible */
+  input[type="email"] {
+    min-height: 44px !important;
+  }
+  
+  /* Styles spécifiques pour le contenu hero */
+  .hero-content {
+    padding: 0 20px;
+  }
+  
+  .hero-title {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  }
+  
+  .hero-subtitle {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Logo responsive amélioré */
+  .logo-responsive {
+    transition: all 0.3s ease;
+  }
+} 
+
+/* Améliorations supplémentaires pour mobile */
+@media (max-width: 768px) {
+  /* Amélioration des interactions tactiles */
+  a, button, input {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.3);
+    touch-action: manipulation;
+  }
+  
+  /* Meilleure gestion du scroll sur mobile */
+  body {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Amélioration de la navigation mobile */
+  nav ul li a {
+    padding: 10px 5px;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Amélioration du menu hamburger */
+  .fixed.top-md.right-md:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Amélioration des boutons sur mobile */
+  .section-content button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Amélioration de l'input email */
+  input[type="email"]:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Optimisations pour les écrans haute densité (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo-responsive {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Amélioration de l'accessibilité sur mobile */
+@media (max-width: 768px) {
+  /* Focus visible pour l'accessibilité */
+  a:focus, button:focus, input:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+  }
+  
+  /* Meilleure visibilité des éléments interactifs */
+  .section-content button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .section-content button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .section-content button:hover::before {
+    left: 100%;
+  }
+} 
