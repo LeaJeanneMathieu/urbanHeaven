@@ -17,6 +17,7 @@
         <div class="absolute top-0 right-0 h-full w-1/2 bg-cover bg-center parallax-bg"
             style="background-image: url('Assets/image1.png');"></div>
 
+        <!-- Navigation Desktop (visible seulement sur desktop) -->
         <nav class="relative z-10 ml-[5%] mt-[15px]">
             <ul class="font-secondary font-thin flex justify-between text-xl w-[40%] list-none">
                 <li><a href="#"
@@ -34,7 +35,7 @@
             </ul>
         </nav>
 
-        <div class="fixed top-md right-md z-[1000] cursor-pointer group">
+        <div class="fixed top-md right-md z-[1000] cursor-pointer group md:top-5 md:right-8 sm:top-4 sm:right-6">
             <div class="w-10 h-5 flex flex-col justify-between">
                 <span
                     class="block w-full h-[3px] bg-white rounded-[3px] transition-all duration-300 group-hover:translate-y-[8px] group-hover:rotate-45"></span>
@@ -62,15 +63,16 @@
             </div>
         </div>
 
-        <div class="absolute left-[5%] top-1/2 -translate-y-1/2 z-[2] w-full max-w-[600px]">
-            <img src="Assets/logo1sansfond 1.png" alt="logo" id="logo" class="max-w-[600px] w-full h-auto block">
+        <!-- Logo avec positionnement responsive -->
+        <div class="absolute left-[5%] lg:left-[5%] top-1/2 -translate-y-1/2 z-[2] w-full max-w-[600px] lg:max-w-[600px] md:left-1/2 md:max-w-[400px] sm:left-1/2 sm:max-w-[300px]">
+            <img src="Assets/logo1sansfond 1.png" alt="logo" id="logo" class="max-w-[600px] w-full h-auto block lg:max-w-[600px] md:max-w-[400px] sm:max-w-[300px] drop-shadow-2xl">
         </div>
 
         <div
-            class="absolute left-1/2 bottom-[30px] -translate-x-1/2 z-[2] w-full max-w-[800px] text-center scroll-reveal">
-            <h1 class="font-display text-white font-extralight text-[35px] drop-shadow-md mb-4">TRANSFORM PLACES <br>
+            class="absolute left-1/2 bottom-[30px] -translate-x-1/2 z-[2] w-full max-w-[800px] text-center scroll-reveal md:max-w-[600px] sm:max-w-[350px]">
+            <h1 class="font-display text-white font-extralight text-[35px] drop-shadow-md mb-4 md:text-[30px] sm:text-[25px]">TRANSFORM PLACES <br>
                 INTO BEAUTIFUL HOMES</h1>
-            <h2 class="font-display text-white font-thin text-[15px]">PLANTS MODERN</h2>
+            <h2 class="font-display text-white font-thin text-[15px] md:text-[14px] sm:text-[12px]">PLANTS MODERN</h2>
         </div>
     </header>
 
@@ -109,11 +111,32 @@
                     class="w-full h-[150%] object-cover section-img absolute top-0 left-0">
             </div>
         </section>
-        <section>
-            <div style="display: flex; height: 70vh; overflow: hidden;">
-                <img src="/Assets/image6.png" alt="Plant 4" style="width: 33.33%; height: 100%; object-fit: cover;">
-                <img src="/Assets/image7.png" alt="Plant 5" style="width: 33.33%; height: 100%; object-fit: cover;">
-                <img src="/Assets/image8.png" alt="Plant 6" style="width: 33.33%; height: 100%; object-fit: cover;">
+        <section class="carousel-section">
+            <div class="carousel-container" style="height: 70vh; overflow: hidden; position: relative;">
+                <!-- Version Desktop: 3 images côte à côte -->
+                <div class="carousel-track desktop-view" style="display: flex; height: 100%;">
+                    <img src="/Assets/image6.png" alt="Plant 4" class="carousel-slide" style="width: 33.33%; height: 100%; object-fit: cover; flex-shrink: 0;">
+                    <img src="/Assets/image7.png" alt="Plant 5" class="carousel-slide" style="width: 33.33%; height: 100%; object-fit: cover; flex-shrink: 0;">
+                    <img src="/Assets/image8.png" alt="Plant 6" class="carousel-slide" style="width: 33.33%; height: 100%; object-fit: cover; flex-shrink: 0;">
+                </div>
+                
+                <!-- Version Mobile: Carrousel avec une seule image visible -->
+                <div class="carousel-track mobile-view" style="display: none; height: 100%; position: relative;">
+                    <img src="/Assets/image6.png" alt="Plant 4" class="carousel-slide active" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 0.5s ease;">
+                    <img src="/Assets/image7.png" alt="Plant 5" class="carousel-slide" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease;">
+                    <img src="/Assets/image8.png" alt="Plant 6" class="carousel-slide" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease;">
+                </div>
+                
+                <!-- Boutons de navigation (visibles seulement sur mobile) -->
+                <button class="carousel-btn carousel-prev mobile-only" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.7); color: white; border: none; padding: 15px; border-radius: 50%; cursor: pointer; z-index: 10; font-size: 20px; display: none;">‹</button>
+                <button class="carousel-btn carousel-next mobile-only" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.7); color: white; border: none; padding: 15px; border-radius: 50%; cursor: pointer; z-index: 10; font-size: 20px; display: none;">›</button>
+                
+                <!-- Indicateurs (visibles seulement sur mobile) -->
+                <div class="carousel-indicators mobile-only" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: none; gap: 10px; z-index: 10;">
+                    <span class="carousel-indicator active" data-slide="0" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.3s;"></span>
+                    <span class="carousel-indicator" data-slide="1" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.3s;"></span>
+                    <span class="carousel-indicator" data-slide="2" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.3s;"></span>
+                </div>
             </div>
             <div class="bg-gradient-to-b from-green-light to-green-dark flex items-center scroll-reveal"
                 style="height: 30vh;">

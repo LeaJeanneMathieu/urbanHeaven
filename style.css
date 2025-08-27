@@ -847,8 +847,8 @@ p {
   height: 170%;
 }
 
-.h-\[\%\] {
-  height: %;
+.h-\[100\%\] {
+  height: 100%;
 }
 
 .h-\[130\%\] {
@@ -1553,376 +1553,488 @@ p {
   opacity: 1;
 } 
 
-/* ===== STYLES RESPONSIVES POUR MOBILE ===== */
+/* ===== STYLES DU CARROUSEL ===== */
 
-/* Media queries pour tablettes (768px et moins) */
+.carousel-container {
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-container:active {
+  cursor: grabbing;
+}
+
+/* Éliminer l'espace blanc au-dessus du carrousel */
+section:has(.carousel-container) {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-section {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.carousel-section .carousel-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.carousel-track {
+  will-change: transform;
+}
+
+.carousel-slide {
+  transition: transform 0.3s ease;
+}
+
+.carousel-btn {
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.carousel-btn:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+  background: rgba(0,0,0,0.8) !important;
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-indicator {
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.carousel-indicator:hover {
+  background: rgba(255,255,255,0.8) !important;
+  transform: scale(1.2);
+}
+
+.carousel-indicator.active {
+  background: rgba(255,255,255,0.9) !important;
+  border-color: rgba(255,255,255,0.8);
+  transform: scale(1.1);
+}
+
+/* Amélioration de l'accessibilité */
+.carousel-btn:focus,
+.carousel-indicator:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Animation d'entrée pour les slides */
+.carousel-slide {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Gestion de l'affichage mobile/desktop */
+.desktop-view {
+  display: flex;
+}
+
+.mobile-view {
+  display: none;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* Version mobile */
 @media (max-width: 768px) {
-  /* Header responsive */
-  header {
-    height: 100vh;
+  .desktop-view {
+    display: none !important;
   }
   
-  /* Navigation mobile */
-  nav ul {
-    width: 100% !important;
-    justify-content: space-around !important;
-    padding: 0 20px;
+  .mobile-view {
+    display: block !important;
   }
   
-  nav ul li a {
-    font-size: 16px !important;
+  .mobile-only {
+    display: block !important;
   }
   
-  /* Logo responsive */
-  #logo {
-    max-width: 400px !important;
-    left: 50% !important;
-    transform: translateX(-50%) translateY(-50%) !important;
+  .carousel-indicators {
+    display: flex !important;
   }
   
-  /* Titres responsives */
-  h1 {
-    font-size: 28px !important;
-    padding: 0 20px;
+  /* Forcer l'affichage du carrousel mobile */
+  .carousel-container .mobile-view {
+    display: block !important;
   }
   
-  h2 {
-    font-size: 14px !important;
-  }
-  
-  /* Sections responsives */
-  main section {
-    flex-direction: column !important;
-    height: auto !important;
-    min-height: 100vh;
-  }
-  
-  main section > div {
-    width: 100% !important;
-    height: 50vh !important;
-  }
-  
-  /* Contenu des sections */
-  .section-content {
-    padding: 40px 20px !important;
-    text-align: center;
-  }
-  
-  .section-content h3 {
-    font-size: 32px !important;
-    margin-bottom: 20px !important;
-  }
-  
-  .section-content p {
-    font-size: 18px !important;
-    width: 100% !important;
-    margin-bottom: 30px !important;
-  }
-  
-  .section-content button {
-    font-size: 18px !important;
-    padding: 15px 30px !important;
-  }
-  
-  /* Section des 3 images */
-  main section:nth-child(3) > div:first-child {
-    height: 50vh !important;
-  }
-  
-  main section:nth-child(3) > div:first-child img {
-    width: 100% !important;
-    height: 100% !important;
-  }
-  
-  /* Section newsletter */
-  main section:nth-child(4) {
-    height: auto !important;
-    min-height: 80vh;
-  }
-  
-  main section:nth-child(4) > div:first-child {
-    height: 40vh !important;
-  }
-  
-  main section:nth-child(4) > div:last-child {
-    height: 40vh !important;
-    padding: 40px 20px;
-  }
-  
-  main section:nth-child(4) input {
-    font-size: 18px !important;
-    padding: 15px 20px !important;
-  }
-  
-  /* Footer responsive */
-  footer > div {
-    flex-direction: column !important;
-    gap: 30px !important;
-    text-align: center;
-    padding: 40px 20px;
-  }
-  
-  footer .min-w-\[320px\] {
-    min-width: auto !important;
-    border-left: none !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 30px;
-  }
-  
-  footer img {
-    width: 200px !important;
-  }
-}
-
-/* Media queries pour mobile (480px et moins) */
-@media (max-width: 480px) {
-  /* Header très mobile */
-  header {
-    height: 100vh;
-  }
-  
-  /* Navigation très mobile */
-  nav ul {
-    flex-direction: column !important;
-    gap: 15px !important;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  nav ul li a {
-    font-size: 18px !important;
-  }
-  
-  /* Logo très mobile */
-  #logo {
-    max-width: 300px !important;
-    top: 40% !important;
-  }
-  
-  /* Titres très mobiles */
-  h1 {
-    font-size: 24px !important;
-    padding: 0 15px;
-    line-height: 1.3;
-  }
-  
-  h2 {
-    font-size: 13px !important;
-  }
-  
-  /* Sections très mobiles */
-  main section > div {
-    height: 60vh !important;
-  }
-  
-  /* Contenu des sections très mobile */
-  .section-content {
-    padding: 30px 15px !important;
-  }
-  
-  .section-content h3 {
-    font-size: 28px !important;
-    margin-bottom: 15px !important;
-  }
-  
-  .section-content p {
-    font-size: 16px !important;
-    margin-bottom: 25px !important;
-    line-height: 1.5;
-  }
-  
-  .section-content button {
-    font-size: 16px !important;
-    padding: 12px 25px !important;
-    width: 100%;
-    max-width: 250px;
-  }
-  
-  /* Section des 3 images très mobile */
-  main section:nth-child(3) > div:first-child {
-    height: 60vh !important;
-  }
-  
-  /* Section newsletter très mobile */
-  main section:nth-child(4) {
-    min-height: 100vh;
-  }
-  
-  main section:nth-child(4) > div:first-child {
-    height: 50vh !important;
-  }
-  
-  main section:nth-child(4) > div:last-child {
-    height: 50vh !important;
-    padding: 30px 15px;
-  }
-  
-  main section:nth-child(4) input {
-    font-size: 16px !important;
-    padding: 12px 15px !important;
-  }
-  
-  /* Footer très mobile */
-  footer > div {
-    gap: 25px !important;
-    padding: 30px 15px;
-  }
-  
-  footer h4 {
-    font-size: 14px !important;
-  }
-  
-  footer img {
-    width: 180px !important;
-  }
-  
-  footer p {
-    font-size: 14px !important;
-  }
-}
-
-/* Media queries pour très petits écrans (320px et moins) */
-@media (max-width: 320px) {
-  /* Ajustements pour très petits écrans */
-  .section-content h3 {
-    font-size: 24px !important;
-  }
-  
-  .section-content p {
-    font-size: 15px !important;
-  }
-  
-  .section-content button {
-    font-size: 15px !important;
-    padding: 10px 20px !important;
-  }
-  
-  h1 {
-    font-size: 22px !important;
-  }
-  
-  h2 {
-    font-size: 12px !important;
-  }
-  
-  footer img {
-    width: 160px !important;
-  }
-}
-
-/* Amélioration de la lisibilité sur mobile */
-@media (max-width: 768px) {
-  /* Meilleur contraste et lisibilité */
-  .text-white {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Boutons plus accessibles sur mobile */
-  button {
-    min-height: 44px !important; /* Taille minimale recommandée pour le touch */
-  }
-  
-  /* Input plus accessible */
-  input[type="email"] {
-    min-height: 44px !important;
-  }
-  
-  /* Styles spécifiques pour le contenu hero */
-  .hero-content {
-    padding: 0 20px;
-  }
-  
-  .hero-title {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-  }
-  
-  .hero-subtitle {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Logo responsive amélioré */
-  .logo-responsive {
-    transition: all 0.3s ease;
-  }
-} 
-
-/* Améliorations supplémentaires pour mobile */
-@media (max-width: 768px) {
-  /* Amélioration des interactions tactiles */
-  a, button, input {
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.3);
-    touch-action: manipulation;
-  }
-  
-  /* Meilleure gestion du scroll sur mobile */
-  body {
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-  }
-  
-  /* Amélioration de la navigation mobile */
-  nav ul li a {
-    padding: 10px 5px;
-    display: block;
-    transition: all 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    transform: translateY(-2px);
-  }
-  
-  /* Amélioration du menu hamburger */
-  .fixed.top-md.right-md:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Amélioration des boutons sur mobile */
-  .section-content button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Amélioration de l'input email */
-  input[type="email"]:focus {
-    transform: scale(1.02);
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
-  }
-}
-
-/* Optimisations pour les écrans haute densité (Retina) */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .logo-responsive {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-  }
-}
-
-/* Amélioration de l'accessibilité sur mobile */
-@media (max-width: 768px) {
-  /* Focus visible pour l'accessibilité */
-  a:focus, button:focus, input:focus {
-    outline: 2px solid rgba(255, 255, 255, 0.8);
-    outline-offset: 2px;
-  }
-  
-  /* Meilleure visibilité des éléments interactifs */
-  .section-content button {
-    position: relative;
+  /* Styles spécifiques pour le carrousel mobile */
+  .carousel-container {
     overflow: hidden;
   }
   
-  .section-content button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+  .mobile-view {
+    position: relative;
   }
   
-  .section-content button:hover::before {
-    left: 100%;
+  .mobile-view .carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+  }
+  
+  .mobile-view .carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  .mobile-view .carousel-slide:not(.active) {
+    opacity: 0;
+    z-index: 1;
+  }
+} 
+
+/* ===== STYLES MOBILE POUR LA NAVIGATION ===== */
+/* Ces styles n'affectent QUE la version mobile et améliorent la navigation */
+
+@media (max-width: 768px) {
+  /* Empêcher le scroll horizontal sur mobile */
+  body, html {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
+  header {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
+  /* Cacher complètement la navigation sur mobile */
+  header > nav {
+    display: none !important;
+  }
+  
+  /* Améliorer le menu hamburger sur mobile */
+  header .group {
+    background: rgba(0, 0, 0, 0.7) !important;
+    padding: 12px !important;
+    border-radius: 10px !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    z-index: 9999 !important;
+  }
+  
+  /* Améliorer les barres du hamburger */
+  header .group .w-10.h-5 {
+    width: 24px !important;
+    height: 20px !important;
+  }
+  
+  header .group .w-10.h-5 span {
+    height: 2px !important;
+    background: white !important;
+    border-radius: 1px !important;
+    margin: 2px 0 !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Optimiser le menu déroulant sur mobile */
+  header .group > div:last-child {
+    width: 200px !important;
+    right: -10px !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    z-index: 9999 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  /* Améliorer les liens du menu mobile */
+  header .group ul li {
+    margin: 10px 0 !important;
+  }
+  
+  header .group ul li a {
+    font-size: 16px !important;
+    padding: 8px 0 !important;
+    display: block !important;
+    text-align: center !important;
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease !important;
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+  }
+  
+  /* Effet hover pour mobile */
+  header .group ul li a:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateX(5px) !important;
+    color: #a3b18a !important;
+  }
+  
+  /* Améliorer le logo sur mobile - CENTRAGE PARFAIT */
+  header #logo {
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-50%) !important;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8)) !important;
+    max-width: 320px !important;
+    width: 75% !important;
+    position: absolute !important;
+  }
+  
+  /* Cibler l'image du logo */
+  header img[src*="logo1sansfond"] {
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-50%) !important;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8)) !important;
+    max-width: 320px !important;
+    width: 75% !important;
+    position: absolute !important;
+  }
+  
+  /* Ajuster le conteneur du logo pour le centrage */
+  header > div:nth-child(3) {
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  /* Contrainte le texte hero sur mobile */
+  header > div:last-child {
+    max-width: 90vw !important;
+    width: 90vw !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  /* Ajuster la taille du texte pour mobile */
+  header h1 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+  
+  header h2 {
+    font-size: 14px !important;
+  }
+  
+  /* Ajuster la taille des titres des sections sur mobile */
+  main section h3 {
+    font-size: 32px !important;
+  }
+  
+  /* Optimiser le footer sur mobile */
+  footer .max-w-\[1200px\] {
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 20px !important;
+  }
+  
+  footer .max-w-\[1200px\] > div {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+  
+  footer .max-w-\[1200px\] > div:last-child {
+    border-left: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding-top: 20px !important;
+    min-width: auto !important;
+  }
+  
+  footer .max-w-\[1200px\] > div:last-child img {
+    width: 160px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  /* Réduire la hauteur du footer sur mobile */
+  footer {
+    padding: 15px 0 !important;
+  }
+  
+  /* Améliorer les liens du footer */
+  footer a {
+    padding: 6px 0 !important;
+    display: block !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  footer a:hover {
+    color: #a3b18a !important;
+  }
+  
+  /* Améliorer les titres du footer */
+  footer h4 {
+    margin-bottom: 10px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+  }
+}
+
+/* Styles pour très petits écrans */
+@media (max-width: 480px) {
+  /* Menu hamburger pour petits écrans */
+  header .group {
+    padding: 10px !important;
+  }
+  
+  header .group > div:last-child {
+    width: 180px !important;
+    right: -5px !important;
+    padding: 12px !important;
+  }
+  
+  header .group ul li a {
+    font-size: 15px !important;
+    padding: 7px 0 !important;
+  }
+  
+  header #logo {
+    max-width: 280px !important;
+    width: 80% !important;
+  }
+  
+  header img[src*="logo1sansfond"] {
+    max-width: 280px !important;
+    width: 80% !important;
+  }
+  
+  header > div:last-child {
+    max-width: 85vw !important;
+    width: 85vw !important;
+  }
+  
+  header h1 {
+    font-size: 24px !important;
+  }
+  
+  header h2 {
+    font-size: 12px !important;
+  }
+  
+  /* Ajuster la taille des titres des sections sur petit mobile */
+  main section h3 {
+    font-size: 28px !important;
+  }
+  
+  /* Footer pour petit mobile */
+  footer .max-w-\[1200px\] {
+    gap: 15px !important;
+    padding: 15px !important;
+  }
+  
+  footer .max-w-\[1200px\] > div:last-child {
+    padding-top: 15px !important;
+  }
+  
+  footer .max-w-\[1200px\] > div:last-child img {
+    width: 140px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  footer {
+    padding: 12px 0 !important;
+  }
+  
+  footer h4 {
+    margin-bottom: 8px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Styles pour très très petits écrans */
+@media (max-width: 320px) {
+  /* Menu hamburger pour très petits écrans */
+  header .group {
+    padding: 8px !important;
+  }
+  
+  header .group > div:last-child {
+    width: 160px !important;
+    padding: 10px !important;
+  }
+  
+  header .group ul li a {
+    font-size: 14px !important;
+    padding: 6px 0 !important;
+  }
+  
+  header #logo {
+    max-width: 250px !important;
+    width: 85% !important;
+  }
+  
+  header img[src*="logo1sansfond"] {
+    max-width: 250px !important;
+    width: 85% !important;
+  }
+  
+  header > div:last-child {
+    max-width: 80vw !important;
+    width: 80vw !important;
+  }
+  
+  header h1 {
+    font-size: 20px !important;
+  }
+  
+  header h2 {
+    font-size: 11px !important;
+  }
+  
+  /* Ajuster la taille des titres des sections sur très petit mobile */
+  main section h3 {
+    font-size: 24px !important;
+  }
+  
+  /* Footer pour très petit mobile */
+  footer .max-w-\[1200px\] {
+    gap: 12px !important;
+    padding: 12px !important;
+  }
+  
+  footer .max-w-\[1200px\] > div:last-child {
+    padding-top: 12px !important;
+  }
+  
+  footer .max-w-\[1200px\] > div:last-child img {
+    width: 120px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  footer {
+    padding: 10px 0 !important;
+  }
+  
+  footer h4 {
+    margin-bottom: 6px !important;
+    font-size: 13px !important;
   }
 } 
