@@ -1745,6 +1745,13 @@ section:has(.carousel-container) {
     z-index: 9999 !important;
   }
   
+  /* Désactiver le hover sur mobile pour éviter les conflits */
+  header .group:hover > div:last-child {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-2px) !important;
+  }
+  
   /* Améliorer les barres du hamburger */
   header .group .w-10.h-5 {
     width: 24px !important;
@@ -1759,6 +1766,29 @@ section:has(.carousel-container) {
     transition: all 0.3s ease !important;
   }
   
+  /* Désactiver complètement le hover des barres sur mobile */
+  header .group:hover .w-10.h-5 span:nth-child(1) {
+    transform: none !important;
+    rotate: 0deg !important;
+  }
+  
+  header .group:hover .w-10.h-5 span:nth-child(2) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  header .group:hover .w-10.h-5 span:nth-child(3) {
+    transform: none !important;
+    rotate: 0deg !important;
+  }
+  
+  /* Désactiver le hover du menu déroulant sur mobile */
+  header .group:hover > div:last-child.group-hover\:opacity-100 {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-2px) !important;
+  }
+  
   /* Optimiser le menu déroulant sur mobile */
   header .group > div:last-child {
     width: 200px !important;
@@ -1771,6 +1801,20 @@ section:has(.carousel-container) {
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     z-index: 9999 !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  /* État ouvert du menu sur mobile */
+  header .group > div:last-child.menu-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+  
+  /* État fermé du menu sur mobile */
+  header .group > div:last-child.menu-closed {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-2px) !important;
   }
   
   /* Améliorer les liens du menu mobile */
@@ -1847,6 +1891,21 @@ section:has(.carousel-container) {
   /* Ajuster la taille des titres des sections sur mobile */
   main section h3 {
     font-size: 32px !important;
+  }
+  
+  /* Corriger le texte sous le carousel sur mobile */
+  .carousel-section .bg-gradient-to-b {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  
+  .carousel-section .bg-gradient-to-b p {
+    margin-left: 0 !important;
+    padding: 0 20px !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    font-size: 18px !important;
+    line-height: 1.6 !important;
   }
   
   /* Optimiser le footer sur mobile */
@@ -1944,6 +2003,12 @@ section:has(.carousel-container) {
     font-size: 28px !important;
   }
   
+  /* Texte sous le carousel pour petit mobile */
+  .carousel-section .bg-gradient-to-b p {
+    font-size: 16px !important;
+    padding: 0 15px !important;
+  }
+  
   /* Footer pour petit mobile */
   footer .max-w-\[1200px\] {
     gap: 15px !important;
@@ -1966,6 +2031,22 @@ section:has(.carousel-container) {
   footer h4 {
     margin-bottom: 8px !important;
     font-size: 14px !important;
+  }
+  
+  /* Désactiver le hover des barres sur petit mobile */
+  header .group:hover .w-10.h-5 span:nth-child(1) {
+    transform: none !important;
+    rotate: 0deg !important;
+  }
+  
+  header .group:hover .w-10.h-5 span:nth-child(2) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  header .group:hover .w-10.h-5 span:nth-child(3) {
+    transform: none !important;
+    rotate: 0deg !important;
   }
 }
 
@@ -2014,6 +2095,12 @@ section:has(.carousel-container) {
     font-size: 24px !important;
   }
   
+  /* Texte sous le carousel pour très petit mobile */
+  .carousel-section .bg-gradient-to-b p {
+    font-size: 14px !important;
+    padding: 0 12px !important;
+  }
+  
   /* Footer pour très petit mobile */
   footer .max-w-\[1200px\] {
     gap: 12px !important;
@@ -2036,5 +2123,21 @@ section:has(.carousel-container) {
   footer h4 {
     margin-bottom: 6px !important;
     font-size: 13px !important;
+  }
+  
+  /* Désactiver le hover des barres sur très petit mobile */
+  header .group:hover .w-10.h-5 span:nth-child(1) {
+    transform: none !important;
+    rotate: 0deg !important;
+  }
+  
+  header .group:hover .w-10.h-5 span:nth-child(2) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  header .group:hover .w-10.h-5 span:nth-child(3) {
+    transform: none !important;
+    rotate: 0deg !important;
   }
 } 

@@ -4,14 +4,14 @@ const menu = document.querySelector('.group > div:last-child');
 
 // Fonction pour ouvrir le menu
 const openMenu = () => {
-  menu.classList.add('opacity-100', 'visible', 'translate-y-0');
-  menu.classList.remove('opacity-0', 'invisible', '-translate-y-2');
+  menu.classList.remove('menu-closed');
+  menu.classList.add('menu-open');
 };
 
 // Fonction pour fermer le menu
 const closeMenu = () => {
-  menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
-  menu.classList.add('opacity-0', 'invisible', '-translate-y-2');
+  menu.classList.remove('menu-open');
+  menu.classList.add('menu-closed');
 };
 
 // Fonction pour gérer l'ouverture/fermeture du menu
@@ -19,7 +19,7 @@ const toggleMenu = (e) => {
   e.preventDefault();
   e.stopPropagation();
   
-  const isOpen = menu.classList.contains('visible');
+  const isOpen = menu.classList.contains('menu-open');
   if (isOpen) {
     closeMenu();
   } else {
@@ -34,6 +34,10 @@ const initMenuEvents = () => {
   hamburger.removeEventListener('mouseleave', closeMenu);
   hamburger.removeEventListener('click', toggleMenu);
   
+  // Supprimer les event listeners de fermeture
+  document.removeEventListener('click', handleClickOutside);
+  window.removeEventListener('scroll', closeMenu);
+  
   if (window.innerWidth > 768) {
     // Desktop: événements hover
     hamburger.addEventListener('mouseenter', openMenu);
@@ -43,18 +47,27 @@ const initMenuEvents = () => {
     hamburger.addEventListener('click', toggleMenu);
     
     // Fermer le menu quand on clique ailleurs
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target)) {
-        closeMenu();
-      }
-    });
+    document.addEventListener('click', handleClickOutside);
     
     // Fermer le menu sur scroll
     window.addEventListener('scroll', closeMenu);
   }
 };
 
+// Fonction pour gérer le clic en dehors du menu
+const handleClickOutside = (e) => {
+  if (!hamburger.contains(e.target)) {
+    closeMenu();
+  }
+};
+
+// Initialiser le menu en état fermé
+const initMenu = () => {
+  menu.classList.add('menu-closed');
+};
+
 // Initialiser les événements au chargement
+initMenu();
 initMenuEvents();
 
 // Gestion du redimensionnement de la fenêtre
