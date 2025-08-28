@@ -204,31 +204,28 @@ class Carousel {
   initMobileCarousel() {
     console.log('Initializing mobile carousel');
     
-    if (!this.slides.length || !this.prevBtn || !this.nextBtn) {
-      console.error('Mobile carousel elements not found');
-      return;
+    // S'assurer que la vue mobile est visible
+    if (this.mobileView) {
+      this.mobileView.style.display = 'block';
+    }
+
+    // Ajouter les listeners des boutons uniquement s'ils existent (flèches supprimées sur mobile possible)
+    if (this.prevBtn) {
+      this.prevBtn.addEventListener('click', () => this.prevSlide());
+    }
+    if (this.nextBtn) {
+      this.nextBtn.addEventListener('click', () => this.nextSlide());
     }
     
-    // S'assurer que la vue mobile est visible
-    this.mobileView.style.display = 'block';
-    
-    // Event listeners pour les boutons
-    this.prevBtn.addEventListener('click', () => this.prevSlide());
-    this.nextBtn.addEventListener('click', () => this.nextSlide());
-    
-    // Event listeners pour les indicateurs
-    this.indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => this.goToSlide(index));
-    });
+    // Event listeners pour les indicateurs (optionnels)
+    if (this.indicators && this.indicators.length) {
+      this.indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => this.goToSlide(index));
+      });
+    }
     
     // Event listeners pour le touch/swipe
     this.setupTouchEvents();
-    
-    // Event listeners pour le clavier
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') this.prevSlide();
-      if (e.key === 'ArrowRight') this.nextSlide();
-    });
     
     // Défilement automatique
     this.startAutoPlay();
@@ -375,7 +372,8 @@ class Carousel {
 
 // Initialisation du carrousel quand le DOM est chargé
 document.addEventListener('DOMContentLoaded', () => {
-  new Carousel();
+  const instance = new Carousel();
+  window.carouselInstance = instance;
 });
 
 // Pause du défilement automatique quand la page n'est pas visible
